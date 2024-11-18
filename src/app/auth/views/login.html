@@ -1,0 +1,50 @@
+{% extends 'layout.html' %} 
+{% from 'macros.html' import show_message %}
+
+{% block title %}
+<title>Cook Inventory | Login</title>
+{% endblock %} 
+
+{% block main %}
+<main
+  class="container flex-grow-1 d-flex flex-column justify-content-center align-items-center pb-5"
+>
+  <h2 class="w-50" style="min-width: 350px">Fazer Login</h2>
+  <form
+    action="/login"
+    method="POST"
+    autocomplete="off"
+    style="min-width: 350px"
+    class="d-flex flex-column w-50 mt-5"
+  >
+    <div class="mb-3">
+      <label for="username"> Usuário </label>
+      <input type="text" name="username" id="username" class="form-control" />
+    </div>
+    <div class="mb-4">
+      <label for="password"> Senha </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="form-control"
+      />
+    </div>
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="ms-1">
+        <input
+          type="checkbox"
+          name="remember"
+          id="remember"
+          class="form-check-input"
+        />
+        <label for="remember"> Mantenha-me conectado </label>
+      </div>
+      <button type="submit" class="btn btn-outline-success w-25 align-self-end">
+        Entrar
+      </button>
+    </div>
+  </form>
+  {{ show_message() }}
+</main>
+{% endblock %}
