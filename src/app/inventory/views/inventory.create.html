@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+<!--  -->
+{% from 'macros.html' import show_messages %}
+<!--  -->
+{% block title %}
+<title>Cook Inventory | Adicionar Item</title>
+{% endblock %}
+<!--  -->
+{% block main %}
+<main class="container flex-grow-1 py-5">
+  <h2 style="min-width: 350px">Adicionar Item ao Estoque</h2>
+  <form
+    action="/estoque/cadastrar"
+    method="POST"
+    autocomplete="off"
+    class="d-flex flex-column my-5"
+  >
+    <div class="mb-3 d-flex gap-3">
+      <div class="w-100">
+        <label for="name"> Nome </label>
+        <input type="text" name="name" id="name" class="form-control" />
+      </div>
+      <div class="w-100">
+        <label for="category"> Categoria </label>
+        <select class="form-select" name="category" id="category">
+          <option value="" selected disabled>Selecione uma Categoria</option>
+          {% for category in categories %}
+          <option value="{{ category.id }}">{{ category.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="mb-3 d-flex gap-3">
+      <div class="w-100">
+        <label for="quantity"> Quantidade </label>
+        <input
+          type="number"
+          name="quantity"
+          id="quantity"
+          step="0.01"
+          min="0"
+          class="form-control"
+        />
+      </div>
+      <div class="w-100">
+        <label for="alert_quantity"> Quantidade de Alerta </label>
+        <input
+          type="number"
+          name="alert_quantity"
+          id="alert_quantity"
+          step="0.01"
+          min="0"
+          class="form-control"
+        />
+      </div>
+      <div class="w-100">
+        <label for="measure"> Unidade de Medida </label>
+        <select class="form-select" name="measure" id="measure">
+          <option value="" selected disabled>Selecione uma Medida</option>
+          {% for measure in measures %}
+          <option value="{{ measure[0] }}">{{ measure[1].get('label') }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label for="description"> Descrição </label>
+      <textarea
+        class="form-control"
+        name="description"
+        id="description"
+        style="height: 100px; resize: none"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-success w-25 align-self-end">
+      Cadastrar
+    </button>
+  </form>
+  {{ show_messages() }}
+</main>
+{% endblock %}

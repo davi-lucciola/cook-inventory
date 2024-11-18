@@ -1,0 +1,5 @@
+.hover-danger:hover {
+  color: #fff;
+  border-color: #dc3545;
+  background-color: #dc3545;
+}

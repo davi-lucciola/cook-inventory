@@ -1,0 +1,44 @@
+{% extends 'layout.html' %} 
+<!--  -->
+{% from 'macros.html' import show_messages %} 
+<!--  -->
+{% block title %}
+<title>Cook Inventory | Atualizar Categoria</title>
+{% endblock %} 
+<!--  -->
+{% block main %}
+<main class="container flex-grow-1 py-5">
+  <h2 class="mt-3" style="min-width: 350px">Atualizar Categoria</h2>
+  <form
+    action="/categorias/{{ category.id }}/atualizar"
+    method="POST"
+    autocomplete="off"
+    class="d-flex flex-column my-5"
+  >
+    <div class="mb-3">
+      <label for="name"> Nome </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        value="{{ category.name }}"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="description"> Descrição </label>
+      <input
+        type="text"
+        name="description"
+        id="description"
+        class="form-control"
+        value="{{ category.description if category is not none else '' }}"
+      />
+    </div>
+    <button type="submit" class="btn btn-outline-success w-25 align-self-end">
+      Salvar
+    </button>
+  </form>
+  {{ show_messages() }}
+</main>
+{% endblock %}

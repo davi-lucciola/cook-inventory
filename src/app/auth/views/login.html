@@ -1,11 +1,7 @@
-{% extends 'layout.html' %} 
-{% from 'macros.html' import show_message %}
-
-{% block title %}
+{% extends 'layout.html' %} {% from 'macros.html' import show_messages %} {%
+block title %}
 <title>Cook Inventory | Login</title>
-{% endblock %} 
-
-{% block main %}
+{% endblock %} {% block main %}
 <main
   class="container flex-grow-1 d-flex flex-column justify-content-center align-items-center pb-5"
 >
@@ -45,6 +41,6 @@
       </button>
     </div>
   </form>
-  {{ show_message() }}
+  {{ show_messages() }}
 </main>
 {% endblock %}
