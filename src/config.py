@@ -2,6 +2,7 @@ import os
 
 
 class Settings:
+    BUCKET = 'cook-inventory-imgs'
     STATIC_FOLDER: str = '../static'
     TEMPLATE_FOLDER: str = '../templates'
 

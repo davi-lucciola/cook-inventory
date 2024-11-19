@@ -1,9 +1,9 @@
-{% macro show_messages() %} 
+{% macro show_messages(class = '') %} 
   {% with messages = get_flashed_messages(true) %} 
     {% if messages %}
       {% for message in messages %}
         <div
-          class="d-flex justify-content-between mb-0 {{message[0]}}"
+          class="d-flex justify-content-between mb-0 {{message[0]}} {{ class }}"
           style="min-width: 350px"
         >
           <p class="mb-0">{{ message[1] }}</p>
@@ -17,4 +17,32 @@
       {% endfor %}
     {% endif %} 
   {% endwith %} 
+{% endmacro %}
+
+{% macro delete_modal(label, modal_id, url) %}
+<div>
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{ modal_id }}">
+    <i class="bi bi-trash3"></i>
+  </button>
+  
+  <div class="modal fade" id="{{ modal_id }}" tabindex="-1" aria-labelledby="{{modal_id}}-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="{{ modal_id }}-label"> Confirmação </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{ label }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancelar </button>
+          <form action="{{url}}" method="get">
+            <button type="submit" class="btn btn-danger"> Excluir </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endmacro %}

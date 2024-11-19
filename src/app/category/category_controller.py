@@ -1,3 +1,4 @@
+from app.inventory.inventory_model import Inventory
 from db import db
 from app.auth import auth, get_current_user
 from app.category.category_model import Category
@@ -107,12 +108,19 @@ def category_update_action(id: int):
 @category_bp.route('/categorias/<int:id>/excluir', methods=['GET'])
 @auth.login_required
 def category_delete_action(id: int):
-    category = db.session.query(Category).get(id)
+    category: Category | None = db.session.query(Category).get(id)
 
     if category is None:
         flash('Categoria não encontrada.', MessageCategory.ERROR)
         return redirect('/categorias')
     
+    inventories = db.session.query(Inventory)\
+        .where(Inventory.category_id == id).all()
+    
+    if len(inventories) != 0:
+        flash(f'Não foi possivel excluir a categoria "{category.name}" pois há items em estoque dessa categoria.', MessageCategory.ERROR)
+        return redirect('/categorias')
+
     try:
         db.session.delete(category)
         db.session.commit()

@@ -19,6 +19,7 @@ class Inventory(db.Model):
     alert_quantity: Mapped[float]
     measure: Mapped[Measure] = Column(type_=Enum(Measure), nullable=False)
 
+    image_url: Mapped[str] = Column(String(255), nullable=False)
 
     def __init__(
         self, 
@@ -27,7 +28,8 @@ class Inventory(db.Model):
         category_id: int, 
         quantity: int, 
         alert_quantity: int | None, 
-        measure: Measure
+        measure: Measure,
+        image_url: str
     ) -> None:
         self.name = name
         self.description = description
@@ -35,6 +37,20 @@ class Inventory(db.Model):
         self.quantity = quantity
         self.alert_quantity = alert_quantity
         self.measure = measure
+        self.image_url = image_url
+
+    def update(self, data: dict[str, str]):
+        self.name = data.get('name')
+        self.description = data.get('description')
+        self.category_id = data.get('category')
+        self.quantity = data.get('quantity')
+        self.alert_quantity = data.get('alert_quantity')
+        self.measure = data.get('measure')
+        self.image_url = data.get('image_url')
+
+    def get_image_path(self) -> str:
+        parts = list(filter(lambda part: part != '', self.image_url.split('/')))
+        return ('/'.join(parts[-2:])).replace('?', '')
 
     @staticmethod
     def validate(data: dict[str, str]):
@@ -61,7 +77,7 @@ class Inventory(db.Model):
             data.update({ 'description': None })
 
         data.update({
-            # 'category': float(data.get('category')),
+            'category': float(data.get('category')),
             'quantity': float(data.get('quantity')),
             'alert_quantity': float(data.get('alert_quantity'))
         })
