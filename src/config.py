@@ -1,4 +1,8 @@
 import os
+import dotenv as env
+
+
+env.load_dotenv()
 
 
 class Settings:
