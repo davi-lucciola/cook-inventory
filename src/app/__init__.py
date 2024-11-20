@@ -3,7 +3,7 @@ from .category.category_controller import category_bp
 from .inventory.inventory_controller import inventory_bp
 
 from typing import Type
-from flask import Flask
+from flask import Flask, redirect
 
 from app import auth_bp, inventory_bp
 from app.auth import login_manager
@@ -19,12 +19,17 @@ def create_app(config: Type[Settings] = Settings):
         template_folder=config.TEMPLATE_FOLDER
     )
 
+    # Config
     app.config.from_object(config)
 
     # Blueprints
     app.register_blueprint(auth_bp)
     app.register_blueprint(category_bp)
     app.register_blueprint(inventory_bp)
+
+    @app.route('/', methods=['GET'])
+    def index():
+        return redirect('/login')
 
     with app.app_context():
         db.init_app(app)

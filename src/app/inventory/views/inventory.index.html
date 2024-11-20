@@ -15,17 +15,18 @@
       Cadastrar Item
       <i class="bi bi-plus-circle"></i>
     </a>
-    <div class="input-group w-25">
+    <form class="input-group w-25" action="/estoque" method="GET">
       <input
         type="text"
         class="form-control"
-        id="pesquisar"
+        id="search"
+        name="search"
         autocomplete="off"
       />
-      <button class="input-group-text btn btn-success">
+      <button type="submit" class="input-group-text btn btn-success">
         <i class="bi bi-search"></i>
       </button>
-    </div>
+    </form>
   </div>
   {% if inventories|length != 0 %}
     <table class="table table-striped">
