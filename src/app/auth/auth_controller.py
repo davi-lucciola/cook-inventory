@@ -2,7 +2,7 @@ from db import db
 from app.auth import auth, get_current_user
 from app.user.user_model import User
 from utils import MessageCategory
-from flask import Blueprint, flash, redirect, request, render_template, url_for
+from flask import Blueprint, flash, redirect, request, render_template
 
 
 auth_bp = Blueprint('Auth', __name__, template_folder='./views')
