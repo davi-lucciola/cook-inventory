@@ -72,24 +72,24 @@ Access the full stack app at http://localhost:5000
 
 > Login
 
-[login](./.github/assets/videos/login-page.webm)
+[login-page.webm](https://github.com/user-attachments/assets/ff02f986-c5b3-4b95-b628-058f723c580a)
 
 ### Category Management Features
 
 > Category CRUD
 
-[category_crud](./.github/assets/videos/category-crud.webm)
+[category-crud.webm](https://github.com/user-attachments/assets/170e6fe2-511f-4863-a195-313f9e1a377a)
 
 > Category has Inventory Items and Cant be Deleted
 
-[category_cant_delete](./.github/assets/videos/category-cant-delete.webm)
+[category-cant-delete.webm](https://github.com/user-attachments/assets/65112080-7251-48f4-b140-00d98efe252d)
 
 ### Inventory Management Features
 
 > Inventory CRUD
 
-[inventory_crud](./.github/assets/videos/inventory-crud.webm)
-[inventory_crud_delete](./.github/assets/videos/inventory-delete-item.webm)
+[inventory-crud.webm](https://github.com/user-attachments/assets/4c2c63c0-83ad-48d9-8d95-83ff1a9aad8f)
+[inventory-delete-item.webm](https://github.com/user-attachments/assets/67d0e8d7-147a-4576-a22b-2b77817a3a94)
 
 <!-- ## 🧪 Run Tests
 
