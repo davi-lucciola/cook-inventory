@@ -58,6 +58,18 @@ cook-inventory
 
 ## 🐳 Start with Docker
 
+### Setup Env Variables
+
+1. Put any key in `TOKEN_SECRET` variable (I recomend you execute the follow command to generate your secret: `openssl rand -hex 32`)
+2. Sign-up in [Supabase](https://supabase.io/) and create an project and setup your database password
+3. Go to "Project Settings > Data API" copy the Project URL" and put in `SUPABASE_URL` variable
+4. Go to "Project Settings > Data API" copy the public project API Key and put in `SUPABASE_KEY` variable
+5. Click in "Connect" button in the project dashboard, copy the connection string, replace your password and put that value in `SQLALCHEMY_DATABASE_URI`
+
+OBS: You can use other database if you want, but you need the supabase to upload the images.
+
+Once you do that steps, you can run with the docker following the steps below.
+
 ### Build and run everything
 
 `docker-compose up --build`
