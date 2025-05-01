@@ -52,9 +52,9 @@ cook-inventory
 ## 🚀 Getting Started
 
 ### 📦 Requirements
-	•	Python 3.12+
+	• Python 3.12+
 	• Supabase Account
-	•	Docker & Docker Compose
+	• Docker & Docker Compose
 
 ⸻
 
