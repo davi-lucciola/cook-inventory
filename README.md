@@ -89,6 +89,7 @@ Access the full stack app at http://localhost:5000
 > Inventory CRUD
 
 [inventory-crud.webm](https://github.com/user-attachments/assets/4c2c63c0-83ad-48d9-8d95-83ff1a9aad8f)
+
 [inventory-delete-item.webm](https://github.com/user-attachments/assets/67d0e8d7-147a-4576-a22b-2b77817a3a94)
 
 <!-- ## 🧪 Run Tests
