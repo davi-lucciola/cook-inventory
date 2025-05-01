@@ -1,8 +1,6 @@
 # 👨‍🍳 Cook Inventory
 
-Cook inventory is a simple and intuitive full stack app made for help kitchens manage their inventory resources and 
-
- 
+Cook inventory is a simple and intuitive full stack app made for help kitchens manage their inventory resources 
 
 ⸻
 
@@ -15,16 +13,14 @@ Cook inventory is a simple and intuitive full stack app made for help kitchens m
 | Database   | Supabase (Database and File Storage)    |
 | DevOps  | Docker |
 
-
 ⸻
 
 ## 🚀 Features
-- 🔒 Session-based authentication with Flask-Login
+- 🔒 Session-based authentication
 - 💻 Simple and intuitive UI
 - 🔰 Category management for the inventory items
-- 📝 Inventory management with images and measure units
+- 📝 Inventory management with highlighting of items that need replenishment
 - 🐳 Dockerized development environment
-
 ⸻
 
 ## 📂 Project Structure
@@ -33,24 +29,22 @@ Cook inventory is a simple and intuitive full stack app made for help kitchens m
 
 ```
 cook-inventory
-├──	src/
-│		├── app/                    # Flask APP
-│		│   ├── auth/							 	# Auth features module
-│		│   ├── category/          	# Category features Module 
-│		│   ├── inventory/         	# Inventory features module
-│		│   └── user/              	# User features module
-│		├── migrations/            	# DB migrations
-│		├── static/            			# Static Files like Images
-│		└── templates/            	# Global Templates Files
+├── src/
+│   ├── app/            # Flask APP
+│   │   ├── auth/       # Auth features module
+│   │   ├── category/   # Category features Module 
+│   │   ├── inventory/  # Inventory features module
+│   │   └── user/       # User features module
+│   ├── migrations/     # DB migrations
+│   ├── static/         # Static Files like Images
+│   └── templates/      # Global Templates Files
 │
-├── .github/                # Assets
-├── .env.exemple            # Env Variables Exemple
-├── docker-compose.yml
+├── .github/            # Assets
+├── .env.exemple        # Env Variables Exemple
+├── docker-compose.yml			
 └── README.md
 ```
-
 </pre>
-
 
 ⸻
 
@@ -65,11 +59,37 @@ cook-inventory
 ## 🐳 Start with Docker
 
 ### Build and run everything
-docker-compose up --build
+
+`docker-compose up --build`
 
 Access the full stack app at http://localhost:5000
 
 ⸻
+
+## 🪟 Demonstration
+
+### Auth Features
+
+> Login
+
+[login](./.github/assets/videos/login-page.webm)
+
+### Category Management Features
+
+> Category CRUD
+
+[category_crud](./.github/assets/videos/category-crud.webm)
+
+> Category has Inventory Items and Cant be Deleted
+
+[category_cant_delete](./.github/assets/videos/category-cant-delete.webm)
+
+### Inventory Management Features
+
+> Inventory CRUD
+
+[inventory_crud](./.github/assets/videos/inventory-crud.webm)
+[inventory_crud_delete](./.github/assets/videos/inventory-delete-item.webm)
 
 <!-- ## 🧪 Run Tests
 
@@ -83,7 +103,6 @@ Frontend lint:
 cd frontend
 npm install
 npm run lint
-
 
 
 ⸻
@@ -101,7 +120,7 @@ That’s looking super clean and professional, Leo! 🔥 Here’s the final sect
 ⸻
 
 ## 🧭 Next Steps
-Check out the [Project board](https://github.com/leotonezi/sonic-library/projects) to see what’s coming next!
+Check out the [Project board]() to see what’s coming next!
 We’re actively working on new features like:
 - User profile pages
 - OAuth login
