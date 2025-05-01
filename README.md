@@ -10,7 +10,7 @@ Cook inventory is a simple and intuitive full stack app made for help kitchens m
 |------------|-----------------------------------|
 | Backend    | Flask, SQLAlchemy                 |
 | Frontend   | Jinja2, HTML, CSS, Bootstrap and Javascript |
-| Database   | Supabase (Database and File Storage)    |
+| Database   | PostgreSQL, Supabase (File Storage)   |
 | DevOps  | Docker |
 
 ⸻
