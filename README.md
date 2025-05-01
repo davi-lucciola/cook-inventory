@@ -21,6 +21,7 @@ Cook inventory is a simple and intuitive full stack app made for help kitchens m
 - 🔰 Category management for the inventory items
 - 📝 Inventory management with highlighting of items that need replenishment
 - 🐳 Dockerized development environment
+
 ⸻
 
 ## 📂 Project Structure
@@ -51,8 +52,9 @@ cook-inventory
 ## 🚀 Getting Started
 
 ### 📦 Requirements
-	•	Docker & Docker Compose
 	•	Python 3.12+
+	• Supabase Account
+	•	Docker & Docker Compose
 
 ⸻
 
@@ -61,7 +63,7 @@ cook-inventory
 ### Setup Env Variables
 
 1. Put any key in `TOKEN_SECRET` variable (I recomend you execute the follow command to generate your secret: `openssl rand -hex 32`)
-2. Sign-up in [Supabase](https://supabase.io/) and create an project and setup your database password
+2. Sign-up in [Supabase](https://supabase.io/), create an project and setup your database password
 3. Go to "Project Settings > Data API" copy the Project URL" and put in `SUPABASE_URL` variable
 4. Go to "Project Settings > Data API" copy the public project API Key and put in `SUPABASE_KEY` variable
 5. Click in "Connect" button in the project dashboard, copy the connection string, replace your password and put that value in `SQLALCHEMY_DATABASE_URI`
